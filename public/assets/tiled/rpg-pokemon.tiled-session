@@ -1,0 +1,97 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "maps/town-1.json",
+    "expandedProjectPaths": [
+        "maps",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Components/message-box-1.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1,
+                "y": 173
+            }
+        },
+        "maps/town-1.json": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 2,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 205.5,
+                "y": 235.5
+            }
+        },
+        "maps/town-1.json#building-tileset": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "maps/town-1.json#collision_tileset": {
+            "scaleInDock": 3
+        },
+        "maps/town-1.json#outdoor-tileset": {
+            "scaleInDock": 2
+        },
+        "maps/town-2.json": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": -114,
+                "y": 236
+            }
+        },
+        "maps/town-2.json#building-tileset": {
+            "scaleInDock": 0.75
+        },
+        "maps/town-2.json#outdoor-tileset": {
+            "scaleInDock": 3
+        }
+    },
+    "last.exportedFilePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled",
+    "last.imagePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled/Components",
+    "last.worldFilePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled/maps",
+    "loadedWorlds": [
+        "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled/maps/world.json"
+    ],
+    "map.fixedSize": true,
+    "map.height": 20,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "json",
+    "map.layerDataFormat": null,
+    "map.orientation": 1,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 20,
+    "openFiles": [
+        "maps/town-1.json",
+        "maps/town-2.json"
+    ],
+    "project": "rpg-pokemon.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "maps/town-2.json",
+        "maps/town-1.json"
+    ],
+    "textEdit.monospace": true,
+    "tileset.embedInMap": true,
+    "tileset.margin": 0,
+    "tileset.spacing": 2,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#a7a7e3",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": false
+}

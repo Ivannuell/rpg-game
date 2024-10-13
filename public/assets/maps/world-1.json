@@ -1,0 +1,34 @@
+{
+    "maps": [
+        {
+            "fileName": "testTown/testTown.json",
+            "height": 320,
+            "width": 320,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "fileName": "route-1.json",
+            "height": 320,
+            "width": 320,
+            "x": 320,
+            "y": 0
+        },
+        {
+            "fileName": "route-3.json",
+            "height": 320,
+            "width": 320,
+            "x": 320,
+            "y": 320
+        },
+        {
+            "fileName": "route-2.json",
+            "height": 320,
+            "width": 320,
+            "x": 0,
+            "y": 320
+        }
+    ],
+    "onlyShowAdjacentMaps": false,
+    "type": "world"
+}
