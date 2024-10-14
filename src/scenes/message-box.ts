@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-import { SCALE, dialog_false, dialog_true } from '../utils/shared-constants.ts'
+import { SCALE } from '../utils/shared-constants.ts'
 
 export default class MessageBox extends Phaser.Scene {
 
@@ -35,10 +35,6 @@ export default class MessageBox extends Phaser.Scene {
 
         this.typewriteText(this.message)
 
-        
-        
-        
-
     }
 
     typewriteText(text: string) {
@@ -54,7 +50,7 @@ export default class MessageBox extends Phaser.Scene {
 
         })
 
-        dialog_false()
+        
         this.ran = false
     }
 
@@ -69,7 +65,6 @@ export default class MessageBox extends Phaser.Scene {
         // console.log(this.time_event.getOverallProgress());
         if (this.time_event.getOverallProgress() === 1 && !this.ran){
             console.log('done')
-            dialog_true()
             this.ran = true
         }
     }

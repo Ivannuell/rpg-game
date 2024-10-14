@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 import { Direction, GridEngine, GridEngineConfig } from "grid-engine";
 import Character from '../components/character';
 import { createPlayerAnimation, getStopFrame } from '../utils/player-animation-helper.ts';
-import { SCALE, DIALOG_DONE, dialog_false, dialog_true } from '../utils/shared-constants.ts';
+import { SCALE } from '../utils/shared-constants.ts';
 import { handleMessage_Page } from '../utils/message-helper.ts';
 
 export default class WorldScene extends Phaser.Scene {
@@ -20,13 +20,13 @@ export default class WorldScene extends Phaser.Scene {
   messageCount: string[] = [];
   currentMessageIndex = 0;
   MaxMessageIndex = 1;
+  private wait = false
 
   constructor() {
     super('World')
 
     this.current_action = 'interact';
   }
-
 
   create() {
 
@@ -114,7 +114,7 @@ export default class WorldScene extends Phaser.Scene {
 
     // Handling object interaction
     this.input.keyboard!.on('keydown', (event: { key: string; }) => {
-      if (event.key === ' ') {
+      if (event.key === ' ' && !this.wait) {
 
         switch (this.current_action) {
           case 'interact': {
