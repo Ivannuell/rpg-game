@@ -10,7 +10,8 @@ export default class Preload extends Phaser.Scene {
 
         // MAPS
         this.load.tilemapTiledJSON('town-1', 'tiled/maps/town-1.json');
-        this.load.tilemapTiledJSON('town-2', 'tiled/maps/town-2.json');
+        // this.load.tilemapTiledJSON('town-2', 'tiled/maps/town-2.json');
+        this.load.tilemapTiledJSON('room-1', 'tiled/rooms/room-1.json')
 
         // TILESETS
         this.load.image('building-tileset', 'tiled/building-tileset.png');
@@ -27,10 +28,10 @@ export default class Preload extends Phaser.Scene {
             frameHeight: 24
         });
 
-    }
+        this.load.on('complete', () => {
+            this.scene.start('World')
+        })
 
-    create() {
-        this.scene.start('World')
     }
 
 }

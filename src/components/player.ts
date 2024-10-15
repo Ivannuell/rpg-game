@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-import { SCALE } from '../utils/shared-constants.ts'
+import { SCALE } from '../helpers/shared-constants.ts'
 
 type CharacterConfig = {
     scene: Phaser.Scene,
@@ -14,8 +14,6 @@ export default class Character extends Phaser.GameObjects.Sprite {
 
         this.setScale(SCALE - 0.3)
         scene.add.existing(this);
-
-        // scene.add.sprite(x, y, texture).setScale(2)
 
     }
 

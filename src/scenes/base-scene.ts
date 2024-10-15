@@ -1,33 +1,29 @@
 import Phaser from 'phaser'
 import { GridEngine, GridEngineConfig, Direction } from 'grid-engine'
-import Character from '../components/character';
-import { handleMessage_Page } from '../utils/message-helper';
+import Character from '../components/player';
+import { handleMessage_Page } from '../helpers/message-helper';
 
 export type KEY_BINDINGS_types = {
     LEFT: Phaser.Input.Keyboard.Key;
     RIGHT: Phaser.Input.Keyboard.Key;
     UP: Phaser.Input.Keyboard.Key;
     DOWN: Phaser.Input.Keyboard.Key;
-    ESC: Phaser.Input.Keyboard.Key;
-    SPACE: Phaser.Input.Keyboard.Key;
-    ENTER: Phaser.Input.Keyboard.Key;
-}
-
-type characters_prop = {
-    player: Phaser.GameObjects.Sprite;
+    PAUSE: Phaser.Input.Keyboard.Key;
+    INTERACT: Phaser.Input.Keyboard.Key;
+    CONFIRM: Phaser.Input.Keyboard.Key;
 }
 
 export default class BaseScene extends Phaser.Scene {
 
 
     protected KEY_BINDINGS = {
-        LEFT: Phaser.Input.Keyboard.KeyCodes.LEFT,
-        RIGHT: Phaser.Input.Keyboard.KeyCodes.RIGHT,
-        UP: Phaser.Input.Keyboard.KeyCodes.UP,
-        DOWN: Phaser.Input.Keyboard.KeyCodes.DOWN,
-        ESC: Phaser.Input.Keyboard.KeyCodes.ESC,
-        SPACE: Phaser.Input.Keyboard.KeyCodes.SPACE,
-        ENTER: Phaser.Input.Keyboard.KeyCodes.ENTER,
+        LEFT: Phaser.Input.Keyboard.KeyCodes.A,
+        RIGHT: Phaser.Input.Keyboard.KeyCodes.D,
+        UP: Phaser.Input.Keyboard.KeyCodes.W,
+        DOWN: Phaser.Input.Keyboard.KeyCodes.S,
+        PAUSE: Phaser.Input.Keyboard.KeyCodes.ESC,
+        INTERACT: Phaser.Input.Keyboard.KeyCodes.SPACE,
+        CONFIRM: Phaser.Input.Keyboard.KeyCodes.ENTER,
     }
 
     protected gridEngineConfig!: GridEngineConfig;
@@ -49,30 +45,14 @@ export default class BaseScene extends Phaser.Scene {
     }
 
 
-    createGEConfig(characters: characters_prop) {
-        this.gridEngineConfig = {
-            characters: [
-                {
-                    id: "player",
-                    sprite: characters.player,
-                    startPosition: { x: 10, y: 8 },
-                    speed: 5,
-                }
-            ]
-        }
-
+    createGEConfig(config: GridEngineConfig) {
+        this.gridEngineConfig = config
         return this.gridEngineConfig
-    }
-
-    update(t: number, dt: number) {
-        console.log(t)
     }
 
     interactCallback() {
         // Interaction logics
         // This is called when i started interacting to an object
-
-        console.log('in BaseScene')
         switch (this.current_action) {
             case 'interact': {
                 console.log('interacting')

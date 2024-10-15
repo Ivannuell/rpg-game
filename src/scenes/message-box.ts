@@ -1,5 +1,5 @@
 import Phaser from 'phaser'
-import { SCALE } from '../utils/shared-constants.ts'
+import { SCALE } from '../helpers/shared-constants.ts'
 import WorldScene from './world-scene.ts'
 
 export default class MessageBox extends Phaser.Scene {

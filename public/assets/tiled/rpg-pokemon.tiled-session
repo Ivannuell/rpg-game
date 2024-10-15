@@ -30,10 +30,10 @@
                 5
             ],
             "scale": 2,
-            "selectedLayer": 4,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 205,
-                "y": 235
+                "x": 204.5,
+                "y": 147.5
             }
         },
         "maps/town-1.json#building-tileset": {
@@ -64,8 +64,8 @@
             "scale": 2,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 57.5,
-                "y": 68.5
+                "x": 57,
+                "y": 68
             }
         },
         "rooms/room-1.json#indoor-tileset-npc-1": {

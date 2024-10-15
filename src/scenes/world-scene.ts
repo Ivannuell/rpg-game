@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Phaser from 'phaser';
 import { Direction } from "grid-engine";
-import Character from '../components/character';
-import { createPlayerAnimation, getStopFrame } from '../utils/player-animation-helper.ts';
-import { SCALE } from '../utils/shared-constants.ts';
+import Character from '../components/player.ts';
+import { createPlayerAnimation, getStopFrame } from '../helpers/player-animation-helper.ts';
+import { SCALE } from '../helpers/shared-constants.ts';
 import BaseScene from './base-scene.ts';
+import { DATA_KEYS, dataManager } from '../utils/data-manager.ts';
 
 export default class WorldScene extends BaseScene {
 
@@ -16,8 +17,6 @@ export default class WorldScene extends BaseScene {
   }
 
   create() {
-
-    
     this.map = this.make.tilemap({ key: 'town-1' });
     this.map.addTilesetImage('building-tileset');
     this.map.addTilesetImage('outdoor-tileset');
@@ -64,30 +63,63 @@ export default class WorldScene extends BaseScene {
 
     // Grid-Engine stuffs
     this.createGEConfig({
-      player: this.player
+      characters: [
+        {
+          id: "player",
+          sprite: this.player,
+          startPosition: {
+            x: dataManager.store.get(DATA_KEYS.PLAYER_POS).x,
+            y: dataManager.store.get(DATA_KEYS.PLAYER_POS).y
+          },
+          speed: 5,
+        }
+      ]
     })
+
     this.gridEngine.create(this.map, this.gridEngineConfig);
     this.onMovementEvents_player()
 
-    this.input.keyboard!.on('keydown', (event: {key: string}) => {
-      if (event.key === ' ' && !this.wait){
-        console.log('dkdj'); 
+
+    //Interacting using the binded key
+    this.input.keyboard!.on('keydown', (event: any) => {
+      if (event.keyCode === this.KEY_BINDINGS.INTERACT && !this.wait) {
         this.interactCallback()
       }
     })
 
+    this.time.addEvent({
+      callback: () => {
+        this.objects.forEach((object: any) => {
+          if (object.type === 'door') {
+            if (this.gridEngine.getPosition('player').x === object!.x / 16 &&
+              this.gridEngine.getPosition('player').y === object!.y / 16
+            ) {
+              object.properties.forEach((properties: { name: string; value: string; }) => {
+                if (properties.name === 'room') {
+                  console.log(properties.value)
+                }
+              })
+            }
+          }
+        })
+      },
+
+      repeat: -1,
+      delay: 500
+    })
+
+
     this.KEYS = this.input.keyboard!.addKeys(this.KEY_BINDINGS);
   }
 
-deltatime: number = 0;
-frame: number = 0
+  deltatime: number = 0;
+  frame: number = 0
+  update(_t: number, td: number) {
 
-  update(t: number, td: number) {
-    
     this.deltatime += td
     this.frame++;
 
-    if (this.deltatime > 1000){
+    if (this.deltatime > 1000) {
       console.log('FPS: ', this.frame)
       this.deltatime = 0
       this.frame = 0
@@ -97,13 +129,13 @@ frame: number = 0
     if (this.KEYS.UP.isDown && this.controllable) {
       this.gridEngine.move('player', Direction.UP);
     }
-    if (this.KEYS.LEFT.isDown && this.controllable) {
+    else if (this.KEYS.LEFT.isDown && this.controllable) {
       this.gridEngine.move('player', Direction.LEFT)
     }
-    if (this.KEYS.RIGHT.isDown && this.controllable) {
+    else if (this.KEYS.RIGHT.isDown && this.controllable) {
       this.gridEngine.move('player', Direction.RIGHT);
     }
-    if (this.KEYS.DOWN.isDown && this.controllable) {
+    else if (this.KEYS.DOWN.isDown && this.controllable) {
       this.gridEngine.move('player', Direction.DOWN);
     }
 
@@ -128,7 +160,6 @@ frame: number = 0
 
   pauseAfirm() {
     this.wait = true;
-    
   }
 
   resumeAfirm() {
@@ -139,6 +170,4 @@ frame: number = 0
       delay: 400
     })
   }
-
-
 }
