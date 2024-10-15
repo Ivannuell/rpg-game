@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import { SCALE } from '../utils/shared-constants.ts'
+import WorldScene from './world-scene.ts'
 
 export default class MessageBox extends Phaser.Scene {
 
@@ -7,6 +8,7 @@ export default class MessageBox extends Phaser.Scene {
     private label!: Phaser.GameObjects.Text
     private time_event!: Phaser.Time.TimerEvent
     private ran: boolean = false
+    private worldScene!: WorldScene;
 
     constructor() {
         super({ key: "message-box" });
@@ -46,12 +48,12 @@ export default class MessageBox extends Phaser.Scene {
                 ++i
             },
             repeat: length - 1,
-            delay: 20,
+            delay: 25,
 
         })
-
         
-        this.ran = false
+        this.worldScene = this.scene.get('World') as WorldScene
+        // this.ran = false
     }
 
     typewriteTextWrapped(text: string) {
@@ -64,8 +66,11 @@ export default class MessageBox extends Phaser.Scene {
     update() {
         // console.log(this.time_event.getOverallProgress());
         if (this.time_event.getOverallProgress() === 1 && !this.ran){
-            console.log('done')
             this.ran = true
+            this.worldScene.resumeAfirm();
+        } else if (this.time_event.getOverallProgress() !== 1) {
+            this.ran = false
+            this.worldScene.pauseAfirm();
         }
     }
 

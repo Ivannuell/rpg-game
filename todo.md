@@ -62,4 +62,17 @@ after that we should close the message modal and set the action back to 'interac
 todo implement a multi phase message feature.
 
 
+entering a new room --> 
+
+if the player's location is equal to a door's location?
+    take that door's data = which includes the room map
+    pause the world scene
+    start the room scene with specific datas which is stored in a data manager?..
+
+    --> Create a room Tilemap
+    --> Create a room scene
+
+
+
+
 

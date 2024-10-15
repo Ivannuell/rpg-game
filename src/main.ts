@@ -3,6 +3,7 @@ import GridEngine from 'grid-engine';
 import Preload from './scenes/preloader-scene.ts';
 import WorldScene from './scenes/world-scene.ts';
 import MessageBox from './scenes/message-box.ts';
+import BaseScene from './scenes/base-scene.ts';
 
 const config = {
   title: "GridEngineExample",
@@ -27,6 +28,7 @@ const config = {
     Preload,
     WorldScene,
     MessageBox,
+    BaseScene
   ],
   parent: "game",
   backgroundColor: "#48C4F8",

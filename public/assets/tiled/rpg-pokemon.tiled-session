@@ -18,9 +18,12 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -1,
-                "y": 173
+                "x": -2,
+                "y": 172
             }
+        },
+        "Components/message-box-1.json#message-frame-tileset": {
+            "scaleInDock": 1
         },
         "maps/town-1.json": {
             "expandedObjectLayers": [
@@ -29,8 +32,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 205.5,
-                "y": 235.5
+                "x": 205,
+                "y": 235
             }
         },
         "maps/town-1.json#building-tileset": {
@@ -47,8 +50,8 @@
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": -114,
-                "y": 236
+                "x": 167.25,
+                "y": 160
             }
         },
         "maps/town-2.json#building-tileset": {
@@ -56,23 +59,34 @@
         },
         "maps/town-2.json#outdoor-tileset": {
             "scaleInDock": 3
+        },
+        "rooms/room-1.json": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 57.5,
+                "y": 68.5
+            }
+        },
+        "rooms/room-1.json#indoor-tileset-npc-1": {
+            "scaleInDock": 1.5
         }
     },
     "last.exportedFilePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled",
-    "last.imagePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled/Components",
+    "last.imagePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled",
     "last.worldFilePath": "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled/maps",
     "loadedWorlds": [
         "C:/Users/Ivann/Documents/repos/rpg-game/public/assets/tiled/maps/world.json"
     ],
     "map.fixedSize": true,
-    "map.height": 20,
+    "map.height": 10,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "json",
     "map.layerDataFormat": null,
     "map.orientation": 1,
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 20,
+    "map.width": 10,
     "openFiles": [
         "maps/town-1.json",
         "maps/town-2.json"
@@ -86,7 +100,7 @@
     "textEdit.monospace": true,
     "tileset.embedInMap": true,
     "tileset.margin": 0,
-    "tileset.spacing": 2,
+    "tileset.spacing": 0,
     "tileset.tileSize": {
         "height": 16,
         "width": 16
