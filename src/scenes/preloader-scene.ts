@@ -17,6 +17,7 @@ export default class Preload extends Phaser.Scene {
         this.load.image('building-tileset', 'tiled/building-tileset.png');
         this.load.image('outdoor-tileset', 'tiled/outdoor-tileset.png');
         this.load.image('collision', 'tiled/collision_tileset.png');
+        this.load.image('indoor-tileset-npc-1', 'tiled/indoor-tileset-npc-1.png')
 
         //COMPONENT IMGS
         this.load.image('town-1-top-decor', 'tiled/maps/town-1-top-decor.png');

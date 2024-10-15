@@ -74,5 +74,5 @@ if the player's location is equal to a door's location?
 
 
 
-
+You might want to think about refactoring the things you just copied in the room scene from world scene DRY method (Dont Repeat Yourself)
 

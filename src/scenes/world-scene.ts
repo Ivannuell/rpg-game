@@ -97,6 +97,18 @@ export default class WorldScene extends BaseScene {
               object.properties.forEach((properties: { name: string; value: string; }) => {
                 if (properties.name === 'room') {
                   console.log(properties.value)
+                  dataManager.store.set({
+                    player: {
+                      position: {
+                        x: this.gridEngine.getPosition('player').x,
+                        y: this.gridEngine.getPosition('player').y
+                      },
+                      direction: {
+                        face: Direction.DOWN
+                      }
+                    }
+                  })
+                  this.scene.start('room')
                 }
               })
             }

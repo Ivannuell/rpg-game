@@ -4,6 +4,7 @@ import Preload from './scenes/preloader-scene.ts';
 import WorldScene from './scenes/world-scene.ts';
 import MessageBox from './scenes/message-box.ts';
 import BaseScene from './scenes/base-scene.ts';
+import RoomScene from './scenes/room-scene.ts';
 
 const config = {
   title: "GridEngineExample",
@@ -28,6 +29,7 @@ const config = {
     Preload,
     WorldScene,
     MessageBox,
+    RoomScene,
     BaseScene
   ],
   parent: "game",
